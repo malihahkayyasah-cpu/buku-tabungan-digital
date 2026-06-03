@@ -1,0 +1,485 @@
+/* ═══════════════════════════════════════
+   NusaBank – Buku Tabungan
+   Theme: Luxury Banking | Navy + Gold
+═══════════════════════════════════════ */
+
+:root {
+  --navy:    #0b1f3a;
+  --navy-2:  #112a4d;
+  --navy-3:  #1a3a66;
+  --gold:    #c8923a;
+  --gold-l:  #e5b96a;
+  --gold-xl: #f5d99a;
+  --cream:   #fdf8f0;
+  --white:   #ffffff;
+  --green:   #2a7d4f;
+  --red:     #b83232;
+  --gray-1:  #f4f0ea;
+  --gray-2:  #e2dbd0;
+  --gray-3:  #9a9080;
+  --text:    #1e1612;
+  --shadow:  0 4px 24px rgba(11,31,58,.12);
+  --shadow-lg: 0 12px 48px rgba(11,31,58,.18);
+  --radius:  14px;
+  --radius-sm: 8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(200,146,58,.06) 0%, transparent 55%),
+    radial-gradient(circle at 80% 90%, rgba(11,31,58,.06) 0%, transparent 55%);
+}
+
+/* ── HEADER ─────────────────────────── */
+.bank-header {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-3) 100%);
+  padding: 22px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.bank-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30 30 60 0 30Z' fill='none' stroke='rgba(255,255,255,.03)' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 28px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-icon {
+  font-size: 28px;
+  color: var(--gold);
+  filter: drop-shadow(0 0 8px rgba(200,146,58,.5));
+}
+.logo-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: .5px;
+}
+.tagline {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--gold-l);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+.header-strip {
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-xl), var(--gold));
+}
+
+/* ── LAYOUT ──────────────────────────── */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 36px 24px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── ACCOUNT CARD ────────────────────── */
+.account-card {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-3) 100%);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  animation: slideDown .5s ease both;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.card-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 90% 20%, rgba(200,146,58,.15) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 80%, rgba(255,255,255,.04) 0%, transparent 45%);
+  pointer-events: none;
+}
+.card-content {
+  position: relative;
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.account-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: var(--white);
+  font-weight: 600;
+  margin-top: 4px;
+}
+.account-badge {
+  background: rgba(200,146,58,.2);
+  border: 1px solid rgba(200,146,58,.4);
+  color: var(--gold-l);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  font-family: 'DM Mono', monospace;
+}
+.card-mid {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.info-col { min-width: 120px; }
+.label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-l);
+  opacity: .7;
+  margin-bottom: 4px;
+  font-family: 'DM Mono', monospace;
+}
+.account-card .label { color: var(--gold-l); }
+.mono {
+  font-family: 'DM Mono', monospace;
+  font-size: 13.5px;
+  color: var(--white);
+  letter-spacing: .5px;
+}
+.status-active {
+  color: #5de8a0;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 2px;
+}
+.saldo-wrap {
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 20px;
+}
+.saldo {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--gold-xl);
+  letter-spacing: .5px;
+  transition: all .4s ease;
+}
+
+/* ── STATS ───────────────────────────── */
+.stats-row {
+  display: flex;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: fadeIn .6s .1s ease both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.stat-box {
+  flex: 1;
+  padding: 22px 24px;
+  text-align: center;
+}
+.stat-label {
+  font-size: 11px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--gray-3);
+  font-family: 'DM Mono', monospace;
+  margin-bottom: 8px;
+}
+.stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  transition: transform .3s ease;
+}
+.stat-value.green { color: var(--green); }
+.stat-value.red   { color: var(--red); }
+.stat-divider {
+  width: 1px;
+  background: var(--gray-2);
+  margin: 16px 0;
+}
+
+/* ── FORM SECTION ────────────────────── */
+.form-section {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  box-shadow: var(--shadow);
+  animation: fadeIn .6s .15s ease both;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: var(--navy);
+  margin-bottom: 22px;
+  position: relative;
+  padding-bottom: 12px;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 36px; height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-3);
+  font-family: 'DM Mono', monospace;
+}
+.form-group input,
+.form-group select {
+  border: 1.5px solid var(--gray-2);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--gray-1);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+  appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--gold);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(200,146,58,.12);
+}
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239a9080' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 38px;
+}
+.btn-catat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-3) 100%);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px 28px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: .3px;
+  transition: transform .2s, box-shadow .2s, background .2s;
+  position: relative;
+  overflow: hidden;
+}
+.btn-catat::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(200,146,58,.25), transparent);
+  opacity: 0;
+  transition: opacity .2s;
+}
+.btn-catat:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(11,31,58,.25); }
+.btn-catat:hover::after { opacity: 1; }
+.btn-catat:active { transform: translateY(0); }
+.btn-icon {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+}
+.form-error {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--red);
+  min-height: 18px;
+  transition: opacity .2s;
+}
+
+/* ── RIWAYAT TABLE ───────────────────── */
+.riwayat-section {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  box-shadow: var(--shadow);
+  animation: fadeIn .6s .2s ease both;
+}
+.riwayat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+.btn-reset {
+  background: none;
+  border: 1.5px solid var(--gray-2);
+  color: var(--gray-3);
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  cursor: pointer;
+  transition: all .2s;
+}
+.btn-reset:hover { border-color: var(--red); color: var(--red); background: rgba(184,50,50,.05); }
+.table-wrap { overflow-x: auto; }
+.passbook-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.passbook-table thead tr {
+  background: var(--navy);
+}
+.passbook-table thead th {
+  color: var(--gold-l);
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  text-align: left;
+  white-space: nowrap;
+}
+.passbook-table thead th:first-child { border-radius: 6px 0 0 0; }
+.passbook-table thead th:last-child  { border-radius: 0 6px 0 0; }
+.passbook-table tbody tr {
+  border-bottom: 1px solid var(--gray-2);
+  transition: background .15s;
+  animation: rowIn .3s ease both;
+}
+@keyframes rowIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.passbook-table tbody tr:hover { background: var(--gray-1); }
+.passbook-table tbody tr:last-child { border-bottom: none; }
+.passbook-table td {
+  padding: 13px 16px;
+  color: var(--text);
+  vertical-align: middle;
+}
+.passbook-table td:first-child {
+  font-family: 'DM Mono', monospace;
+  color: var(--gray-3);
+  font-size: 12px;
+}
+.passbook-table .td-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+.passbook-table .td-setoran { color: var(--green); font-family: 'DM Mono', monospace; font-weight: 500; }
+.passbook-table .td-penarikan { color: var(--red); font-family: 'DM Mono', monospace; font-weight: 500; }
+.passbook-table .td-saldo {
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  color: var(--navy);
+}
+.passbook-table .td-ket { max-width: 180px; }
+
+/* ── EMPTY STATE ─────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 48px 20px;
+  display: none;
+}
+.empty-state.show { display: block; }
+.empty-icon { font-size: 48px; margin-bottom: 12px; }
+.empty-state p { color: var(--navy); font-weight: 500; font-size: 15px; }
+.empty-state span { color: var(--gray-3); font-size: 13px; margin-top: 4px; display: block; }
+
+/* ── TOAST ───────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 32px; left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--navy);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s, transform .3s;
+  z-index: 999;
+  white-space: nowrap;
+  border-left: 3px solid var(--gold);
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── FOOTER ──────────────────────────── */
+.bank-footer {
+  background: var(--navy);
+  color: rgba(255,255,255,.35);
+  text-align: center;
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  padding: 18px;
+  letter-spacing: .5px;
+}
+
+/* ── RESPONSIVE ──────────────────────── */
+@media (max-width: 680px) {
+  .card-content { padding: 24px 20px; }
+  .form-section, .riwayat-section { padding: 24px 18px; }
+  .saldo { font-size: 30px; }
+  .account-name { font-size: 20px; }
+  .card-mid { gap: 20px; }
+  .stats-row { flex-direction: column; }
+  .stat-divider { width: 100%; height: 1px; margin: 0 16px; }
+  .tagline { display: none; }
+  .form-grid { grid-template-columns: 1fr 1fr; }
+  .passbook-table thead th, .passbook-table td { padding: 10px 10px; font-size: 12px; }
+}
+@media (max-width: 400px) {
+  .form-grid { grid-template-columns: 1fr; }
+}
