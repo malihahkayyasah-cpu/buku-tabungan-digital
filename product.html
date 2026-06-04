@@ -1,34 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buku Tabungan – NusaBank</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-<!doctype html>
-
-<html>
-    <head>
-        <meta charset="utf-8">
-
-        <title>Blank template</title>
-
-        <!-- Load external CSS styles -->
-        <link rel="stylesheet" href="styles.css">
-
-    </head>
-
-    <body>
+<nav>
     <ul>
-        <li><a href= "index.html">Home</a></li>        
-        <li><a href= "design.html">Design</a></li>
-        <li>Product</li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a>Product</a></li>
     </ul>
-
-       <h1>Berikut adalah produk yang telah kami buat</h1>
-        <p> <a href="https://malihahkayyasah-cpu.github.io/buku-tabungan-digital/">Belalangbank </p>
-        <br> Literasi Keuangan
-        <br> isinya lagi
-        </br>
-
-
+</nav>
+  
         <!-- Load external JavaScript -->
         <script src="scripts.js"></script>
         
     </body>
 
+</html>
+  
+  <!-- ═══════ HEADER ═══════ -->
+  <header class="bank-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-name">BelalangBank</span>
+      </div>
+      <div class="tagline">Tabungan Pribadi Anda</div>
+    </div>
+    <div class="header-strip"></div>
+  </header>
+
+  <main class="container">
+
+    <!-- ═══════ KARTU AKUN ═══════ -->
+    <section class="account-card">
+      <div class="card-bg-pattern"></div>
+      <div class="card-content">
+        <div class="card-top">
+          <div>
+            <p class="label">Nama Nasabah</p>
+            <h2 class="account-name" id="account-name"> Camila Malihah Kayyasah</h2>
+          </div>
+          <div class="account-badge">Tabungan Reguler</div>
+        </div>
+        <div class="card-mid">
+          <div class="info-col">
+            <p class="label">Nomor Rekening</p>
+            <p class="mono" id="account-number">1234-5678-9012</p>
+          </div>
+          <div class="info-col">
+            <p class="label">Tanggal Buka</p>
+            <p class="mono" id="open-date">03 Juni 2026</p>
+          </div>
+          <div class="info-col">
+            <p class="label">Status</p>
+            <p class="status-active">● Aktif</p>
+          </div>
+        </div>
+        <div class="saldo-wrap">
+          <p class="label">Saldo Saat Ini</p>
+          <p class="saldo" id="saldo-display">Rp 0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ STATS ═══════ -->
+    <section class="stats-row">
+      <div class="stat-box">
+        <p class="stat-label">Total Setoran</p>
+        <p class="stat-value green" id="total-masuk">Rp 0</p>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-box">
+        <p class="stat-label">Total Penarikan</p>
+        <p class="stat-value red" id="total-keluar">Rp 0</p>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-box">
+        <p class="stat-label">Jumlah Transaksi</p>
+        <p class="stat-value" id="jumlah-transaksi">0</p>
+      </div>
+    </section>
+
+    <!-- ═══════ FORM TRANSAKSI ═══════ -->
+    <section class="form-section">
+      <h3 class="section-title">Catat Transaksi</h3>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="jenis">Jenis Transaksi</label>
+          <select id="jenis">
+            <option value="setoran">💰 Setoran</option>
+            <option value="penarikan">💸 Penarikan</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="jumlah">Jumlah (Rp)</label>
+          <input type="number" id="jumlah" placeholder="0" min="1000" step="1000" />
+        </div>
+        <div class="form-group">
+          <label for="keterangan">Keterangan</label>
+          <input type="text" id="keterangan" placeholder="Contoh: Gaji, Bayar cicilan..." maxlength="60" />
+        </div>
+        <div class="form-group">
+          <label for="tanggal">Tanggal</label>
+          <input type="date" id="tanggal" />
+        </div>
+      </div>
+      <button class="btn-catat" id="btn-catat" onclick="tambahTransaksi()">
+        <span class="btn-icon">+</span> Catat Transaksi
+      </button>
+      <p class="form-error" id="form-error"></p>
+    </section>
+
+    <!-- ═══════ RIWAYAT ═══════ -->
+    <section class="riwayat-section">
+      <div class="riwayat-header">
+        <h3 class="section-title" style="margin:0">Riwayat Transaksi</h3>
+        <button class="btn-reset" onclick="resetData()" title="Reset semua data">↺ Reset</button>
+      </div>
+
+      <!-- Tabel seperti buku tabungan asli -->
+      <div class="table-wrap">
+        <table class="passbook-table">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Tanggal</th>
+              <th>Keterangan</th>
+              <th>Setoran</th>
+              <th>Penarikan</th>
+              <th>Saldo</th>
+            </tr>
+          </thead>
+          <tbody id="tabel-transaksi">
+            <!-- diisi JS -->
+          </tbody>
+        </table>
+        <div class="empty-state" id="empty-state">
+          <div class="empty-icon">📒</div>
+          <p>Belum ada transaksi</p>
+          <span>Catat transaksi pertama Anda di atas</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════ TOAST ═══════ -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="bank-footer">
+    <p>NusaBank © 2024 &nbsp;·&nbsp; Data tersimpan di browser Anda &nbsp;·&nbsp; Simulasi buku tabungan</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
