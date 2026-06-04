@@ -43,7 +43,7 @@ body {
 ul{
     display: flex;
     list-style: none;
-    gap: 60px;
+    gap: 90px;
 }
 .bank-header::before {
   content: '';
