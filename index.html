@@ -1,36 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home – Buku Tabungan Digital</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-<!doctype html>
-
-<html>
-    <head>
-        <meta charset="utf-8">
-
-        <title>Blank template</title>
-
-        <!-- Load external CSS styles -->
-        <link rel="stylesheet" href="styles.css">
-
-    </head>
-
-    <body>
-    <ul>
-        <li>Home</li>
-        <li><a href="design.html">Design</a></li>
-        <li><a href= "product.html">Product</a></li>
+<!-- ═══════ NAVBAR ═══════ -->
+<nav class="main-nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="logo-icon">⬡</span>
+      <span class="logo-name">Kelompok Belalang</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="design.html">Design</a></li>
+      <li><a href="product.html">Product</a></li>
     </ul>
+  </div>
+  <div class="nav-strip"></div>
+</nav>
 
-        <h1>kelompok belalang</h1>
-        <p> judul </p>
-        <br> isinya
-        <br> isinya lagi
-        </br>
+<!-- ═══════ HERO SECTION ═══════ -->
+<section class="hero-section">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-content">
+    <p class="hero-label">Kelompok Belalang — Tugas Informatika</p>
+    <h1 class="hero-title">Buku Tabungan Digital</h1>
+    <p class="hero-subtitle">Simulasi pencatatan keuangan modern berbasis web untuk membantu memahami pengelolaan tabungan secara digital.</p>
+  </div>
+</section>
 
+<!-- ═══════ MAIN CONTENT ═══════ -->
+<main class="page-container">
 
-        
+  <!-- Card: Tentang Project -->
+  <section class="content-card">
+    <h2 class="section-title">Tentang Project</h2>
+    <p class="content-text">
+      Buku Tabungan Digital adalah aplikasi web simulasi yang dibuat sebagai tugas kelompok dalam mata pelajaran Informatika. Aplikasi ini mereplikasi fungsi buku tabungan konvensional ke dalam format digital yang interaktif.
+    </p>
+    <p class="content-text">
+      Dengan aplikasi ini, pengguna dapat mencatat transaksi setoran dan penarikan, melihat riwayat transaksi lengkap, serta memantau saldo secara real-time. Semua data tersimpan di browser, sehingga tidak memerlukan server.
+    </p>
+  </section>
 
-        <!-- Load external JavaScript -->
-        <script src="scripts.js"></script>
-        
-    </body>
+  <!-- Card: Fitur Utama -->
+  <section class="content-card">
+    <h2 class="section-title">Fitur Utama</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <span class="feature-icon">💰</span>
+        <h3>Catat Transaksi</h3>
+        <p>Setoran dan penarikan tercatat rapi dengan tanggal dan keterangan.</p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">📊</span>
+        <h3>Statistik Keuangan</h3>
+        <p>Lihat total setoran, total penarikan, dan jumlah transaksi secara instan.</p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">📒</span>
+        <h3>Riwayat Lengkap</h3>
+        <p>Tabel riwayat transaksi seperti buku tabungan bank asli.</p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🧠</span>
+        <h3>Kuis Finansial</h3>
+        <p>Uji pengetahuan keuanganmu lewat kuis interaktif di halaman Product.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Card: Anggota Kelompok -->
+  <section class="content-card">
+    <h2 class="section-title">Anggota Kelompok</h2>
+    <div class="member-list">
+      <div class="member-item">
+        <div class="member-avatar">C</div>
+        <div>
+          <p class="member-name">Camila Malihah Kayyasah</p>
+          <p class="member-role">Product & Development</p>
+        </div>
+      </div>
+      <div class="member-item">
+        <div class="member-avatar">L</div>
+        <div>
+          <p class="member-name">Laila</p>
+          <p class="member-role">Design</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="bank-footer">
+  <p>Kelompok Belalang © 2024 &nbsp;·&nbsp; Tugas Informatika &nbsp;·&nbsp; Buku Tabungan Digital</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
 </html>

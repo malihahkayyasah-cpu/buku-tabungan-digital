@@ -1,165 +1,312 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buku Tabungan – NusaBank</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product – Buku Tabungan Digital</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="design.html">Design</a></li>
-        <li><a>Product</a></li>
-    </ul>
-</nav>
-  
-        <!-- Load external JavaScript -->
-        <script src="scripts.js"></script>
-        
-    </body>
-
-</html>
-  
-  <!-- ═══════ HEADER ═══════ -->
-  <header class="bank-header">
-    <div class="header-inner">
-      <div class="logo">
-        <span class="logo-icon">⬡</span>
-        <span class="logo-name">BelalangBank</span>
-      </div>
-      <div class="tagline">Tabungan Pribadi Anda</div>
+<!-- ═══════ NAVBAR ═══════ -->
+<nav class="main-nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="logo-icon">⬡</span>
+      <span class="logo-name">Kelompok Belalang</span>
     </div>
-    <div class="header-strip"></div>
-  </header>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="design.html">Design</a></li>
+      <li><a href="product.html" class="active">Product</a></li>
+    </ul>
+  </div>
+  <div class="nav-strip"></div>
+</nav>
 
-  <main class="container">
+<!-- ═══════ HEADER ═══════ -->
+<header class="bank-header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-icon">⬡</span>
+      <span class="logo-name">BelalangBank</span>
+    </div>
+    <div class="tagline">Tabungan Pribadi Anda</div>
+  </div>
+  <div class="header-strip"></div>
+</header>
 
-    <!-- ═══════ KARTU AKUN ═══════ -->
-    <section class="account-card">
-      <div class="card-bg-pattern"></div>
-      <div class="card-content">
-        <div class="card-top">
-          <div>
-            <p class="label">Nama Nasabah</p>
-            <h2 class="account-name" id="account-name"> Camila Malihah Kayyasah</h2>
-          </div>
-          <div class="account-badge">Tabungan Reguler</div>
-        </div>
-        <div class="card-mid">
-          <div class="info-col">
-            <p class="label">Nomor Rekening</p>
-            <p class="mono" id="account-number">1234-5678-9012</p>
-          </div>
-          <div class="info-col">
-            <p class="label">Tanggal Buka</p>
-            <p class="mono" id="open-date">03 Juni 2026</p>
-          </div>
-          <div class="info-col">
-            <p class="label">Status</p>
-            <p class="status-active">● Aktif</p>
-          </div>
-        </div>
-        <div class="saldo-wrap">
-          <p class="label">Saldo Saat Ini</p>
-          <p class="saldo" id="saldo-display">Rp 0</p>
-        </div>
-      </div>
-    </section>
+<main class="container">
 
-    <!-- ═══════ STATS ═══════ -->
-    <section class="stats-row">
-      <div class="stat-box">
-        <p class="stat-label">Total Setoran</p>
-        <p class="stat-value green" id="total-masuk">Rp 0</p>
+  <!-- ═══════ KARTU AKUN ═══════ -->
+  <section class="account-card">
+    <div class="card-bg-pattern"></div>
+    <div class="card-content">
+      <div class="card-top">
+        <div>
+          <p class="label">Nama Nasabah</p>
+          <h2 class="account-name" id="account-name"> Camila Malihah Kayyasah</h2>
+        </div>
+        <div class="account-badge">Tabungan Reguler</div>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat-box">
-        <p class="stat-label">Total Penarikan</p>
-        <p class="stat-value red" id="total-keluar">Rp 0</p>
+      <div class="card-mid">
+        <div class="info-col">
+          <p class="label">Nomor Rekening</p>
+          <p class="mono" id="account-number">1234-5678-9012</p>
+        </div>
+        <div class="info-col">
+          <p class="label">Tanggal Buka</p>
+          <p class="mono" id="open-date">03 Juni 2026</p>
+        </div>
+        <div class="info-col">
+          <p class="label">Status</p>
+          <p class="status-active">● Aktif</p>
+        </div>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat-box">
-        <p class="stat-label">Jumlah Transaksi</p>
-        <p class="stat-value" id="jumlah-transaksi">0</p>
+      <div class="saldo-wrap">
+        <p class="label">Saldo Saat Ini</p>
+        <p class="saldo" id="saldo-display">Rp 0</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ═══════ FORM TRANSAKSI ═══════ -->
-    <section class="form-section">
-      <h3 class="section-title">Catat Transaksi</h3>
-      <div class="form-grid">
-        <div class="form-group">
-          <label for="jenis">Jenis Transaksi</label>
-          <select id="jenis">
-            <option value="setoran">💰 Setoran</option>
-            <option value="penarikan">💸 Penarikan</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="jumlah">Jumlah (Rp)</label>
-          <input type="number" id="jumlah" placeholder="0" min="1000" step="1000" />
-        </div>
-        <div class="form-group">
-          <label for="keterangan">Keterangan</label>
-          <input type="text" id="keterangan" placeholder="Contoh: Gaji, Bayar cicilan..." maxlength="60" />
-        </div>
-        <div class="form-group">
-          <label for="tanggal">Tanggal</label>
-          <input type="date" id="tanggal" />
-        </div>
+  <!-- ═══════ STATS ═══════ -->
+  <section class="stats-row">
+    <div class="stat-box">
+      <p class="stat-label">Total Setoran</p>
+      <p class="stat-value green" id="total-masuk">Rp 0</p>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-box">
+      <p class="stat-label">Total Penarikan</p>
+      <p class="stat-value red" id="total-keluar">Rp 0</p>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-box">
+      <p class="stat-label">Jumlah Transaksi</p>
+      <p class="stat-value" id="jumlah-transaksi">0</p>
+    </div>
+  </section>
+
+  <!-- ═══════ FORM TRANSAKSI ═══════ -->
+  <section class="form-section">
+    <h3 class="section-title">Catat Transaksi</h3>
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="jenis">Jenis Transaksi</label>
+        <select id="jenis">
+          <option value="setoran">💰 Setoran</option>
+          <option value="penarikan">💸 Penarikan</option>
+        </select>
       </div>
-      <button class="btn-catat" id="btn-catat" onclick="tambahTransaksi()">
-        <span class="btn-icon">+</span> Catat Transaksi
+      <div class="form-group">
+        <label for="jumlah">Jumlah (Rp)</label>
+        <input type="number" id="jumlah" placeholder="0" min="1000" step="1000">
+      </div>
+      <div class="form-group">
+        <label for="keterangan">Keterangan</label>
+        <input type="text" id="keterangan" placeholder="Contoh: Gaji, Bayar cicilan..." maxlength="60">
+      </div>
+      <div class="form-group">
+        <label for="tanggal">Tanggal</label>
+        <input type="date" id="tanggal">
+      </div>
+    </div>
+    <button class="btn-catat" id="btn-catat" onclick="tambahTransaksi()">
+      <span class="btn-icon">+</span> Catat Transaksi
+    </button>
+    <p class="form-error" id="form-error"></p>
+  </section>
+
+  <!-- ═══════ RIWAYAT ═══════ -->
+  <section class="riwayat-section">
+    <div class="riwayat-header">
+      <h3 class="section-title" style="margin:0">Riwayat Transaksi</h3>
+      <button class="btn-reset" onclick="resetData()" title="Reset semua data">↺ Reset</button>
+    </div>
+
+    <!-- Tabel seperti buku tabungan asli -->
+    <div class="table-wrap">
+      <table class="passbook-table">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Tanggal</th>
+            <th>Keterangan</th>
+            <th>Setoran</th>
+            <th>Penarikan</th>
+            <th>Saldo</th>
+          </tr>
+        </thead>
+        <tbody id="tabel-transaksi">
+          <!-- diisi JS -->
+        </tbody>
+      </table>
+      <div class="empty-state" id="empty-state">
+        <div class="empty-icon">📒</div>
+        <p>Belum ada transaksi</p>
+        <span>Catat transaksi pertama Anda di atas</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ KUIS FINANSIAL ═══════ -->
+  <section class="quiz-section">
+    <h3 class="section-title">🧠 Kuis Pemahaman Finansial</h3>
+    <p class="quiz-intro">Uji seberapa jauh pengetahuanmu tentang keuangan! Jawab 5 pertanyaan di bawah ini, lalu klik "Cek Jawaban" untuk melihat hasilnya.</p>
+
+    <div class="quiz-questions" id="quiz-questions">
+
+      <!-- Soal 1 -->
+      <div class="quiz-card" id="quiz-card-0">
+        <p class="quiz-number">Soal 1</p>
+        <p class="quiz-question">Apa yang dimaksud dengan <strong>inflasi</strong>?</p>
+        <div class="quiz-options">
+          <label class="quiz-option">
+            <input type="radio" name="q0" value="a">
+            <span>Kenaikan harga barang secara umum dan terus-menerus</span>
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q0" value="b">
+            <span>Penurunan harga barang di pasaran</span>
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q0" value="c">
+            <span>Kenaikan gaji karyawan setiap tahun</span>
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q0" value="d">
+            <span>Penurunan nilai tukar mata uang asing</span>
+          </label>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+      </div>
+
+      <!-- Soal 2 -->
+      <div class="quiz-card" id="quiz-card-1">
+        <p class="quiz-number">Soal 2</p>
+        <p class="quiz-question">Apa fungsi utama <strong>buku tabungan</strong>?</p>
+        <div class="quiz-options">
+          <label class="quiz-option">
+            <input type="radio" name="q1" value="a">
+            <span>Untuk membayar pajak tahunan</span>
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q1" value="b">
+            <span>Untuk mencatat transaksi keuangan nasabah di bank</span>
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q1" value="c">
+            <span>Untuk mengajukan pinjaman ke bank</span>
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q1" value="d">
+            <span>Untuk investasi saham</span>
+          </label>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+      </div>
+
+      <!-- Soal 3 -->
+      <div class="quiz-card" id="quiz-card-2">
+        <p class="quiz-number">Soal 3</p>
+        <p class="quiz-question">Apa yang dimaksud dengan <strong>bunga bank</strong>?</p>
+        <div class="quiz-options">
+          <label class="quiz-option">
+            <input type="radio" name="q2" value="a">
+            <span>Biaya administrasi yang dikenakan bank</span>
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q2" value="b">
+            <span>Denda keterlambatan pembayaran kredit</span>
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q2" value="c">
+            <span>Imbalan yang diberikan bank kepada nasabah atas simpanannya</span>
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q2" value="d">
+            <span>Pajak yang dipungut dari tabungan</span>
+          </label>
+        </div>
+        <div class="quiz-feedback" id="feedback-2"></div>
+      </div>
+
+      <!-- Soal 4 -->
+      <div class="quiz-card" id="quiz-card-3">
+        <p class="quiz-number">Soal 4</p>
+        <p class="quiz-question">Apa yang dimaksud dengan <strong>investasi</strong>?</p>
+        <div class="quiz-options">
+          <label class="quiz-option">
+            <input type="radio" name="q3" value="a">
+            <span>Membeli barang kebutuhan sehari-hari</span>
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q3" value="b">
+            <span>Menyimpan uang di bawah kasur</span>
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q3" value="c">
+            <span>Penanaman modal dengan harapan mendapat keuntungan di masa depan</span>
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q3" value="d">
+            <span>Meminjam uang dari bank untuk belanja</span>
+          </label>
+        </div>
+        <div class="quiz-feedback" id="feedback-3"></div>
+      </div>
+
+      <!-- Soal 5 -->
+      <div class="quiz-card" id="quiz-card-4">
+        <p class="quiz-number">Soal 5</p>
+        <p class="quiz-question">Apa itu <strong>diversifikasi</strong> dalam keuangan?</p>
+        <div class="quiz-options">
+          <label class="quiz-option">
+            <input type="radio" name="q4" value="a">
+            <span>Menyimpan semua uang di satu tempat</span>
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q4" value="b">
+            <span>Menyebarkan investasi ke berbagai instrumen untuk mengurangi risiko</span>
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q4" value="c">
+            <span>Meminjam dari banyak bank sekaligus</span>
+          </label>
+          <label class="quiz-option">
+            <input type="radio" name="q4" value="d">
+            <span>Menghabiskan semua tabungan untuk satu aset</span>
+          </label>
+        </div>
+        <div class="quiz-feedback" id="feedback-4"></div>
+      </div>
+
+    </div>
+
+    <!-- Tombol & Hasil -->
+    <div class="quiz-actions">
+      <button class="btn-catat btn-quiz" id="btn-cek-kuis" onclick="cekKuis()">
+        <span class="btn-icon">✓</span> Cek Jawaban
       </button>
-      <p class="form-error" id="form-error"></p>
-    </section>
+      <button class="btn-reset btn-reset-quiz" id="btn-reset-kuis" onclick="resetKuis()" style="display:none;">
+        ↺ Ulangi Kuis
+      </button>
+    </div>
+    <div class="quiz-result" id="quiz-result"></div>
+  </section>
 
-    <!-- ═══════ RIWAYAT ═══════ -->
-    <section class="riwayat-section">
-      <div class="riwayat-header">
-        <h3 class="section-title" style="margin:0">Riwayat Transaksi</h3>
-        <button class="btn-reset" onclick="resetData()" title="Reset semua data">↺ Reset</button>
-      </div>
+</main>
 
-      <!-- Tabel seperti buku tabungan asli -->
-      <div class="table-wrap">
-        <table class="passbook-table">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Tanggal</th>
-              <th>Keterangan</th>
-              <th>Setoran</th>
-              <th>Penarikan</th>
-              <th>Saldo</th>
-            </tr>
-          </thead>
-          <tbody id="tabel-transaksi">
-            <!-- diisi JS -->
-          </tbody>
-        </table>
-        <div class="empty-state" id="empty-state">
-          <div class="empty-icon">📒</div>
-          <p>Belum ada transaksi</p>
-          <span>Catat transaksi pertama Anda di atas</span>
-        </div>
-      </div>
-    </section>
+<!-- ═══════ TOAST ═══════ -->
+<div class="toast" id="toast"></div>
 
-  </main>
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="bank-footer">
+  <p>Kelompok Belalang © 2024 &nbsp;·&nbsp; Tugas Informatika &nbsp;·&nbsp; Buku Tabungan Digital</p>
+</footer>
 
-  <!-- ═══════ TOAST ═══════ -->
-  <div class="toast" id="toast"></div>
-
-  <!-- ═══════ FOOTER ═══════ -->
-  <footer class="bank-footer">
-    <p>NusaBank © 2024 &nbsp;·&nbsp; Data tersimpan di browser Anda &nbsp;·&nbsp; Simulasi buku tabungan</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

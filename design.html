@@ -1,37 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design – Buku Tabungan Digital</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-<!doctype html>
-
-<html>
-    <head>
-        <meta charset="utf-8">
-
-        <title>Blank template</title>
-
-        <!-- Load external CSS styles -->
-        <link rel="stylesheet" href="styles.css">
-
-    </head>
-
-    <body>
-    <ul>
-        <li><a href= "index.html">Home</a></li>
-        <li>Design</li>
-        <li><a href= "product.html">Product</a></li>
+<!-- ═══════ NAVBAR ═══════ -->
+<nav class="main-nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="logo-icon">⬡</span>
+      <span class="logo-name">Kelompok Belalang</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="design.html" class="active">Design</a></li>
+      <li><a href="product.html">Product</a></li>
     </ul>
+  </div>
+  <div class="nav-strip"></div>
+</nav>
 
-        <h1>kelompok belalang</h1>
-        <marquee>Design by laila</marquee>
-        <p> judul </p>
-        <br> isinya
-        <br> isinya lagi
-        </br>
+<!-- ═══════ HERO SECTION ═══════ -->
+<section class="hero-section hero-design">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-content">
+    <p class="hero-label">Halaman Design</p>
+    <h1 class="hero-title">Desain & Tampilan</h1>
+    <p class="hero-subtitle">Konsep visual dan proses desain aplikasi Buku Tabungan Digital oleh Laila.</p>
+  </div>
+</section>
 
+<!-- ═══════ MAIN CONTENT ═══════ -->
+<main class="page-container">
 
-        
+  <!-- Card: Konsep Desain -->
+  <section class="content-card">
+    <h2 class="section-title">Konsep Desain</h2>
+    <p class="content-text">
+      Desain aplikasi Buku Tabungan Digital terinspirasi dari tampilan buku tabungan bank konvensional yang dikombinasikan dengan estetika modern. Warna utama yang digunakan adalah <strong>navy blue</strong> dan <strong>gold</strong>, memberikan kesan profesional dan terpercaya layaknya institusi perbankan.
+    </p>
+    <p class="content-text">
+      Pemilihan font <em>Playfair Display</em> untuk heading memberikan nuansa elegan, sementara <em>DM Sans</em> dan <em>DM Mono</em> digunakan untuk teks body dan data numerik agar mudah dibaca.
+    </p>
+  </section>
 
-        <!-- Load external JavaScript -->
-        <script src="scripts.js"></script>
-        
-    </body>
+  <!-- Card: Palet Warna -->
+  <section class="content-card">
+    <h2 class="section-title">Palet Warna</h2>
+    <div class="color-palette">
+      <div class="color-swatch">
+        <div class="swatch-circle" style="background: #0b1f3a;"></div>
+        <p class="swatch-name">Navy</p>
+        <p class="swatch-hex">#0b1f3a</p>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-circle" style="background: #1a3a66;"></div>
+        <p class="swatch-name">Navy Light</p>
+        <p class="swatch-hex">#1a3a66</p>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-circle" style="background: #c8923a;"></div>
+        <p class="swatch-name">Gold</p>
+        <p class="swatch-hex">#c8923a</p>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-circle" style="background: #e5b96a;"></div>
+        <p class="swatch-name">Gold Light</p>
+        <p class="swatch-hex">#e5b96a</p>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-circle" style="background: #fdf8f0;"></div>
+        <p class="swatch-name">Cream</p>
+        <p class="swatch-hex">#fdf8f0</p>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-circle" style="background: #2a7d4f;"></div>
+        <p class="swatch-name">Green</p>
+        <p class="swatch-hex">#2a7d4f</p>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-circle" style="background: #b83232;"></div>
+        <p class="swatch-name">Red</p>
+        <p class="swatch-hex">#b83232</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Card: Elemen Desain -->
+  <section class="content-card">
+    <h2 class="section-title">Elemen Desain</h2>
+    <div class="design-elements">
+      <div class="design-element-item">
+        <h3>🎨 Kartu Akun</h3>
+        <p>Gradient navy-to-blue dengan pattern overlay, menampilkan informasi nasabah dengan layout yang bersih dan terstruktur.</p>
+      </div>
+      <div class="design-element-item">
+        <h3>📐 Layout Responsif</h3>
+        <p>Grid system fleksibel yang menyesuaikan di desktop dan mobile, memastikan pengalaman optimal di semua perangkat.</p>
+      </div>
+      <div class="design-element-item">
+        <h3>✨ Animasi Halus</h3>
+        <p>Micro-animations pada card, tabel, dan tombol untuk memberikan feedback visual yang menyenangkan.</p>
+      </div>
+      <div class="design-element-item">
+        <h3>🏦 Tabel Buku Tabungan</h3>
+        <p>Format tabel menyerupai buku tabungan asli dengan kolom setoran, penarikan, dan saldo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Card: Designer -->
+  <section class="content-card">
+    <h2 class="section-title">Designer</h2>
+    <div class="designer-card">
+      <div class="member-avatar large">L</div>
+      <div>
+        <p class="member-name">Laila</p>
+        <p class="member-role">UI/UX Designer</p>
+        <p class="content-text" style="margin-top: 8px;">Bertanggung jawab atas konsep visual, pemilihan warna, typography, dan layout keseluruhan aplikasi Buku Tabungan Digital.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="bank-footer">
+  <p>Kelompok Belalang © 2024 &nbsp;·&nbsp; Tugas Informatika &nbsp;·&nbsp; Buku Tabungan Digital</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
 </html>
