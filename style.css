@@ -46,7 +46,7 @@ h1 {
     text-align: center;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: bold;
-    color: pink;
+    color: navy;
 }
 .bank-header::before {
   content: '';
