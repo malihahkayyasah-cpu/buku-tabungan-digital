@@ -49,17 +49,17 @@ h1 {
     color: pink;
 }
 body{background-color: beige;
-border:4px solid pink;
+border:4px navy;
 border-radius: 12px;
 }
 ul{list-style-type:none;
 }
 li{display:inLine;
 }
-ul{background-color: pink;
-   border:2px solid yellow;
+ul{background-color: beige;
+   border:2px beige;
    border-radius: 12px; }
-ul{list-style-type: none;border: 4px solid grey;
+ul{list-style-type: none;border: 4px gold;
 }
 li {display:inline;}
 }
